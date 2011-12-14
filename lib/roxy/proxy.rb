@@ -10,7 +10,7 @@ module Roxy
     # Make sure the proxy is as dumb as it can be.
     # Blatanly taken from Jim Wierich's BlankSlate post:
     # http://onestepback.org/index.cgi/Tech/Ruby/BlankSlate.rdoc
-    instance_methods.each { |m| undef_method m unless m =~ /(^__|^proxy_)/ }
+    instance_methods.each { |m| undef_method m unless m =~ /(^__|^proxy_|object_id)/ }
     
     def initialize(owner, options, args, &block)
       @owner = owner
